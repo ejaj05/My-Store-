@@ -3,6 +3,7 @@ import axios from "../Utils/Axios";
 import { Link, useNavigate } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { ProductContext } from "../Utils/Context";
+import { toast } from "react-toastify";
 import { nanoid } from "nanoid/non-secure";
 const Create = () => {
   const navigate = useNavigate();
@@ -31,8 +32,9 @@ const Create = () => {
       setPrice("");
       setDescription("");
       navigate('/')
+      toast.success("Product added successfully")
     } else {
-      alert("All fields are required");
+      toast.error("All fields are required")
     }
   };
   return (
