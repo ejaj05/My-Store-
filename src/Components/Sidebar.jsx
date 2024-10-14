@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../Utils/Context";
+
 const Sidebar = () => {
   const [products] = useContext(ProductContext)
   let distinct_category = 
@@ -11,13 +12,13 @@ const Sidebar = () => {
     return `rgba(${parseInt(Math.random()*255)},${parseInt(Math.random()*255)},${parseInt(Math.random()*255)},0.5)`
   }
   return (
-    <div className="fixed top-0 left-0 w-[20%] h-full bg-slate-200 text-white z-50 flex flex-col items-center py-10">
-      <Link to='/create' className="text-blue-400  px-[4%] py-[3%]  border-[2px] border-blue-200 px-5 py-2 text-[1.5vw] font-regular rounded">
+    <div className="sidebar fixed top-0 left-0 w-[20%] h-full bg-slate-200 text-white z-50 flex flex-col items-center py-10">
+      <Link to='/create' className="btn text-blue-400  px-[4%] py-[3%]  border-[2px] border-blue-200 px-5 py-2 text-[2vw] font-regular rounded">
         Add New Product
       </Link>
-      <hr className="my-3 w-[80%]" />
-      <h1 className="w-[80%] text-xl text-zinc-600 font-medium">Category Filter</h1>
-      <ul className="w-[80%]">
+      <hr className="my-3 w-[90%]" />
+      <h1 className="w-[80%]  text-zinc-600 font-medium text-[2vw]">Category Filter</h1>
+      <ul className="w-[80%] text-[1vw]">
         {distinct_category.map((category,idx)=>(
           <li key={idx} className="w-full flex items-center gap-2 mt-4">
           <span style={{backgroundColor:colors()}}

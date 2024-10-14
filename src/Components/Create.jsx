@@ -87,7 +87,7 @@ const Create = () => {
         >
           Add New Product
         </button>
-        <div className="absolute top-[-5%] left-[-10%] ml-[22%] mt-10">
+        <div className="absolute top-[-20px] left-[-50px] ml-[22%] mt-10">
           <Link to="/">
             <FaArrowLeftLong className=" text-3xl" />
             Go Back

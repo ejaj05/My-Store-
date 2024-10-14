@@ -4,6 +4,7 @@ import { Link, useLocation,useNavigate } from "react-router-dom";
 import { ProductContext } from "../Utils/Context";
 import Loader from "./Loader";
 import axios from "../Utils/Axios";
+
 const Home = () => {
   const [products] = useContext(ProductContext);
   const { search } = useLocation();
@@ -29,9 +30,9 @@ const Home = () => {
     }
   }, [category, products]);
   return (
-    <div className="w-full h-full relative flex">
+    <div className="relative flex">
       <Sidebar />
-      <div className="relative ml-[22%] px-5 flex-1 flex bg-slate-100 flex-wrap gap-2">
+      <div className="home h-screen relative ml-[22%] px-5 flex-1 flex flex-wrap gap-2 ">
         {filterProduct ? (
           filterProduct.map((product, idx) => (
             <Link
