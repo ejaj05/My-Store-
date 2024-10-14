@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../Utils/Context";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { toast } from "react-toastify";
 import { nanoid } from "nanoid";
 
 const Edit = () => {
@@ -49,8 +50,9 @@ const Edit = () => {
       setPrice("");
       setDescription("");
       navigate("/");
+      toast.success("Product added successfully")
     }else{
-      alert("All fields are required");
+      toast.error("All fields are required");
     }
   };
   useEffect (()=>{
